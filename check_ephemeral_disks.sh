@@ -14,32 +14,7 @@ done
 disk_num=${#arr_disk[@]}
 #$echo $disk_num
 
-lists=(
-xvdb
-xvdc
-xvdd
-xvde
-xvdf
-xvdg
-xvdh
-xvdi
-xvdj
-xvdk
-xvdl
-xvdm
-xvdn
-xvdo
-xvdp
-xvdq
-xvdr
-xvds
-xvdt
-xvdu
-xvdv
-xvdw
-xvdx
-xvdy
-)
+lists=$(lsblk -l | grep disk | awk '{print $1}' | sed '/xvda/d')
 
 arr_mount=( )
 
