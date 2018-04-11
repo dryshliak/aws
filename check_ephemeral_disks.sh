@@ -31,7 +31,7 @@ done
 
 disk_num_mount=${#arr_mount[@]}
 
-if [ $disk_num_mount -lt $disk_num ];
+if [ $disk_num_mount -ne $disk_num ];
 then
   echo 1
  else
